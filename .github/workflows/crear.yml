@@ -32,11 +32,11 @@ jobs:
       run: echo "Simular que se esta desplegando"
     
     - name: Construir la imagen de docker
-      run: docker build -t ghcr.io/ByronMoreno/hello-byron:1.0.0 .
+      run: docker build -t ghcr.io/byronmoreno/hello-byron:1.0.0 .
     
     - name: Login en Github container registry
       run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: Publicar la imagen
-      run: docker push ghcr.io/ByronMoreno/hello-byron:1.0.0
+      run: docker push ghcr.io/byronmoreno/hello-byron:1.0.0
     
